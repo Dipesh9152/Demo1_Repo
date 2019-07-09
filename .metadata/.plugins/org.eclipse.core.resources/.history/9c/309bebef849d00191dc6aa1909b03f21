@@ -1,0 +1,25 @@
+package org.kale.auction.pages;
+
+import org.kale.auction.sdk.Variables_Declaration;
+import org.kale.auction.utils.General_Methods;
+import org.kale.auction.utils.Validate_Elements;
+import org.openqa.selenium.WebDriver;
+
+public class PreBidConditions_Page 
+{
+	WebDriver driver;	
+	Variables_Declaration vd=new Variables_Declaration();
+	General_Methods gm=new General_Methods();
+	Validate_Elements ve=new Validate_Elements();
+	
+	public PreBidConditions_Page(WebDriver dr)
+	{
+		driver=dr;
+	}
+	
+	public void Group_User_Edit_PreBidCondition(String SC_ID,String Description,String ExcelSavePath,
+			String Pre_Bid_Condition,String Customs_Remarks,String Notification,String PreBid_Description)
+	{
+		
+	}
+}

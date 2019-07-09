@@ -1,0 +1,17 @@
+package org.kale.corvi.Test_Cases_Modules;
+
+public class Sales_Target 
+{
+	Variables_Declaration vd=new Variables_Declaration();
+	WriteExcel rw = new WriteExcel();
+	LoginPage lp=new LoginPage(driver);
+	
+	@BeforeClass
+	public void ReadData_UserDetails() throws Exception
+	{
+		TestDataReader tdr=TestDataReaderFactory.getInstance().open("test_data\\user-accounts.yml");
+		TestDataCollection tdc=tdr.getCollection("login_cfsuser");
+		vd.username_cfs=tdc.getString("email");
+		vd.password_cfs=tdc.getString("password");
+	}
+}

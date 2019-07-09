@@ -1,0 +1,15 @@
+package org.kale.corvi.pages;
+
+public class Sales_Target_Page 
+{
+
+	WebDriver driver;	
+	Variables_Declaration vd=new Variables_Declaration();
+	General_Methods gm=new General_Methods();
+	Validate_Elements ve=new Validate_Elements();
+	
+	public Sales_Target_Page(WebDriver dr)
+	{
+		driver=dr;
+	}
+}

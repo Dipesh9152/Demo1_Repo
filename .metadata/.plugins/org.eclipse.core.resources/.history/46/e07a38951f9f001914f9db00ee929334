@@ -1,0 +1,15 @@
+# This is file used to keep all config data
+
+url = http://10.22.2.31:8080/Corvi_Automation/Login.aspx
+browser = Chrome
+
+testdata_path=E:\\CODEX_AUCTION\\AUCTION\\test_data\\Test_Data_Auction_01.xls
+
+Report_folder_path=E:\\CODEX_AUCTION\\AUCTION\\Test_Excel_Report\\
+
+Screenshotpath=E:\\CODEX_AUCTION\\AUCTION\\Screenshots\\
+
+Notice1_UploadFilePath=E:\\CODEX_AUCTION\\AUCTION\\test_data\\Demo_TestingFile.txt
+
+implicit.wait = 5
+explicit.wait = 5

@@ -1,0 +1,6 @@
+# User Details test data
+
+login_cfsuser:     
+    user_id: admin
+    password: "12345"
+    

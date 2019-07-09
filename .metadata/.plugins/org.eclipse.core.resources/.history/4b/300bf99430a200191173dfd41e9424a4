@@ -1,0 +1,109 @@
+package org.kale.corvi.pages;
+
+import java.util.List;
+import java.util.Random;
+
+import org.kale.corvi.sdk.Variables_Declaration;
+import org.kale.corvi.utils.General_Methods;
+import org.kale.corvi.utils.Validate_Elements;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Sales_Target_Page 
+{
+
+	WebDriver driver;	
+	Variables_Declaration vd=new Variables_Declaration();
+	General_Methods gm=new General_Methods();
+	Validate_Elements ve=new Validate_Elements();
+	
+	public Sales_Target_Page(WebDriver dr)
+	{
+		driver=dr;
+	}
+	
+	public void Manish_Demo() throws Exception
+	{
+		
+		driver.findElement(By.xpath(".//*[@id='trackShipments']/div[2]/div/div[1]/div/span[1]/input")).sendKeys("176");
+		
+		driver.findElement(By.xpath(".//*[@id='trackShipments']/div[2]/div/div[1]/div/span[2]/input")).sendKeys("76560831");
+		
+		driver.findElement(By.xpath(".//*[@id='trackShipments']/div[2]/a")).click();
+		
+		
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath(".//*[@id='heading-1']/h5/span[1]")).click();
+		
+		WebElement BCF=driver.findElement(By.cssSelector("a[title='\r\n" + 
+				"                                                            Booking Confirmed\r\n" + 
+				"                                                        ']"));
+		
+		  String VAL=BCF.getText();
+		   System.out.println(VAL);
+		
+//		List<WebElement> Userlist = driver.findElements(By.cssSelector("a[title='BOOKING CONFIRMED']"));
+//
+//		for(WebElement ulist : Userlist)
+//		{
+//		   String VAL=ulist.getText();
+//		   System.out.println(VAL);
+//		}
+
+		
+		//WebElement BCF=driver.findElement(By.xpath("//div[contains(text(),'Booking Confirmed')]"));		
+	}
+	
+	public void Create_SalesTarget()
+	{
+		try 
+		{
+
+			vd.StartTime = gm.GetStartTime();
+			String newwindow = driver.getWindowHandle();
+
+			for (String subwindow : driver.getWindowHandles()) 
+			{
+				driver.switchTo().window(subwindow);
+				Thread.sleep(1000);
+				driver.manage().window().maximize();
+			}
+
+			driver.findElement(By.linkText("Sales")).click();
+			// driver.switchTo().frame("pageContainer");
+
+			Actions action = new Actions(driver);
+			WebElement element = driver.findElement(By.xpath("//span[contains(.,'Sales')]"));
+			Thread.sleep(1000);
+			action.moveToElement(element).build().perform();
+
+			Thread.sleep(20000);
+
+			new WebDriverWait(driver, 100)
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(.,'Sales Target')]")));
+
+			driver.findElement(By.xpath("//span[contains(.,'Sales Target')]")).click();
+			Thread.sleep(10000);
+
+			driver.switchTo().frame("pageContainer");
+			Thread.sleep(3000);
+
+			new WebDriverWait(driver, 100)
+					.until(ExpectedConditions.elementToBeClickable(By.id("ctl00_Toolbar1_btnNew")));
+
+			driver.findElement(By.id("ctl00_Toolbar1_btnNew")).click();
+			Thread.sleep(3000);
+
+			Random r = new Random();
+			final String alphabet = "0123456789ABCDE";
+			final int N = alphabet.length();
+			int i;
+			
+
+	}
+}
